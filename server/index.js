@@ -28,7 +28,7 @@ app.post('/api/orders', async (req, res) => {
     );
     res.json(newOrder);
   } catch (err) {
-    console.log(err.message);
+    // console.log(err.message);
   }
 });
 
