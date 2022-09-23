@@ -2,7 +2,7 @@ const express = require('express');
 const staticMiddleware = require('./static-middleware');
 const errorMiddleware = require('./error-middleware');
 const app = express();
-const cors = require('cors');
+// const cors = require('cors');
 
 app.use(staticMiddleware);
 app.use(express.json());
@@ -10,8 +10,7 @@ app.use(express.json());
 // Routes
 
 app.use('/auth', require('../routes/jwt-auth'));
-
-app.use('/api', require('../routes/jwt-auth'));
+app.use('/account', require('../routes/account'));
 
 // app.post('/api/orders', async (req, res) => {
 //   try {

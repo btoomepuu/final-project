@@ -2,9 +2,10 @@ const router = require('express').Router();
 const pool = require('../server/db');
 const bcrypt = require('bcrypt');
 const jwtGenerator = require('../server/public/jwt-generator');
-// register
+const validInfo = require('../server/validinfo');
+const authorization = require('../server/authorization');
 
-router.post('/register', async (req, res) => {
+router.post('/register', validInfo, async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
     const user = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
@@ -20,7 +21,7 @@ router.post('/register', async (req, res) => {
     const newUser = await pool.query('INSERT INTO users ("firstName", "lastName", email, password) VALUES ($1, $2, $3, $4) RETURNING *', [firstName, lastName, email, bcryptPassword]);
 
     const token = jwtGenerator(newUser.rows[0].userId);
-    res.json({ token });
+    return res.json({ token });
 
   } catch (err) {
     console.error(err.message);
@@ -28,7 +29,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', validInfo, async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -47,10 +48,20 @@ router.post('/login', async (req, res) => {
     }
 
     const token = jwtGenerator(user.rows[0].userId);
-    res.json({ token });
+    return res.json({ token });
 
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+router.get('/verified', authorization, async (req, res) => {
+  try {
+    res.json(true);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
   }
 });
 
