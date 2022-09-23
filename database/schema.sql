@@ -37,7 +37,6 @@ CREATE TABLE "public"."addresses" (
   "street" TEXT NOT NULL,
   "city" TEXT NOT NULL,
   "state" TEXT NOT NULL,
-  "country" TEXT NOT NULL,
   "zipcode" integer NOT NULL,
   "userId" integer NOT NULL,
   CONSTRAINT "addresses_pk" PRIMARY KEY ("addressId")

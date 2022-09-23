@@ -11,6 +11,17 @@ body {
   margin: 0 1vh;
 }
 
+.card {
+  border: none;
+  background-color: transparent;
+}
+
+.cursive {
+  font-family:
+    "Abril Fatface",
+    cursive;
+}
+
 /* order page */
 .order-container {
   display: flex;
@@ -83,15 +94,6 @@ body {
 }
 
 /* home */
-.main-img {
-  position: relative;
-  color: #fefcf7;
-}
-
-.img-conatiner {
-  position: relative;
-  z-index: 1;
-}
 
 .home-img {
   text-align: center;
@@ -100,34 +102,48 @@ body {
   border-radius: 2%;
 }
 
-.img-text {
-  position: absolute;
-  margin: 4vh;
-  z-index: 2;
-  top: 1vh;
-}
-
 .img-title {
+  color: #fefcf7;
   width: 50%;
   margin-bottom: 5%;
   font-family:
     "Abril Fatface",
     cursive;
-  font-size: 4vw;
 }
 
-.img-para {
+.img-text {
   width: 50%;
-  font-size: 2vw;
+  color: #fefcf7;
+  font-family:
+    Barlow,
+    sans-serif;
 }
 
-.create-btn {
-  outline: none;
-  border: none;
-  border-radius: 8px;
-  color: #fefcf7;
-  background-color: #a92c46;
-  font-size: 3vw;
-  width: 25vw;
-  height: 5vw;
+.hero-img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: #333d4b;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(./img/home.jpg);
+}
+
+/* home collection */
+
+.collection-container {
+  justify-content: center;
+}
+
+.collection-row {
+  text-align: center;
+}
+
+.coffeebag {
+  align-self: center;
+}
+
+.card-body {
+  text-align: center;
 }

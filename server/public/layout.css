@@ -2,6 +2,20 @@
   max-width: 575px;
 }
 
+@media screen and (max-width: 575px) {
+  .collection-row {
+    flex-direction: column;
+  }
+
+  .coffeebag {
+    width: 30%;
+  }
+
+  .card-info {
+    padding: 0 25%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 1080px;
