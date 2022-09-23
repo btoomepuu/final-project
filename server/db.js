@@ -1,0 +1,12 @@
+require('dotenv/config');
+const Pool = require('pg').Pool;
+
+const pool = new Pool({
+  // eslint- disable - line
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+module.exports = pool;
