@@ -1,149 +1,65 @@
-/* font-family: 'Abril Fatface',
-cursive;
-font-family: 'Barlow',
-sans-serif; */
-
-body {
-  background-color: #fefcf7;
+/* {
+  font-family: "Abril Fatface", cursive;
 }
 
-.container {
-  margin: 0 1vh;
+.barlow {
+  font-family: "Barlow", sans-serif;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.card {
-  border: none;
-  background-color: transparent;
+/* .container {
+  margin: 0 1.5vh;
+  max-width: 575px;
 }
 
-.cursive {
-  font-family:
-    "Abril Fatface",
-    cursive;
-}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1080px;
+  }
+} */
 
-/* order page */
-.order-container {
+.row {
   display: flex;
-  flex-wrap: wrap;
 }
 
-.selection {
-  flex-wrap: wrap;
-  color: #858a91;
-  flex-basis: 100%;
-}
+/* navbar */
 
-.selection > span {
-  width: 100%;
-  font-family:
-    "Abril Fatface",
-    cursive;
-  font-size: 2.5vw;
-}
-
-.box-1,
-.box-2,
-.box-3 {
-  color: #333d4b;
-  background-color: #f4f1eb;
-  padding: 0.5rem;
-  word-break: break-word;
-  border-radius: 2%;
-}
-
-.box-1,
-.box-2 {
-  margin-right: 0.5vh;
-}
-
-.question {
-  color: #858a91;
-  font-family:
-    "Abril Fatface",
-    cursive;
-  font-size: 2.5vh;
-}
-
-.hover:hover {
-  background-color: #fdd6ba;
-  cursor: pointer;
-}
-
-.option {
-  font-family:
-    "Abril Fatface",
-    cursive;
-  font-size: 2vw;
-}
-
-.info {
-  font-family:
-    Barlow,
-    sans-serif;
-  font-size: 1.5vw;
-}
-
-/* /navbar */
-
-.coffeebean {
-  font-family:
-    "Abril Fatface",
-    cursive;
+.link {
+  text-decoration: none;
   color: #a92c46;
 }
 
-/* home */
-
-.home-img {
-  text-align: center;
-  height: auto;
-  width: 90%;
-  border-radius: 2%;
+.nav-bar {
+  cursor: pointer;
+  margin: 3vh 2vh;
 }
 
-.img-title {
-  color: #fefcf7;
-  width: 50%;
-  margin-bottom: 5%;
-  font-family:
-    "Abril Fatface",
-    cursive;
+.logo {
+  font-family: "Abril Fatface", cursive;
+  font-size: 1.5em;
+  width: 60%;
 }
 
-.img-text {
-  width: 50%;
-  color: #fefcf7;
-  font-family:
-    Barlow,
-    sans-serif;
-}
-
-.hero-img {
-  position: relative;
-  width: 100%;
-  height: auto;
-  text-align: center;
-  color: #333d4b;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(./img/home.jpg);
-}
-
-/* home collection */
-
-.collection-container {
-  justify-content: center;
-}
-
-.collection-row {
-  text-align: center;
-}
-
-.coffeebag {
+.login,
+.create {
   align-self: center;
+  font-family: Barlow, sans-serif;
+  font-size: 0.8em;
+  text-align: center;
+  width: 20%;
 }
 
-.card-body {
-  text-align: center;
+/* /login-signup */
+
+.log-sign-head {
+  font-family: "Abril Fatface", cursive;
+  color: #63666a;
+}
+
+.form-group {
+  font-family: Barlow, sans-serif;
 }

@@ -1,16 +1,28 @@
 import React from 'react';
-// import Home from './pages/home';
-// import OrderPage from './pages/order-page';
-// import Header from './components/header';
-import Login from './pages/login-signup';
-// import Account from './pages/account-page';
 
-export default class App extends React.Component {
-  render() {
-    // return <OrderPage />;
-    // return <Account/>;
-    return <Login/>;
-    // return <Home />;
-    // return <Header />;
-  }
+import NavBar from './components/nav-bar';
+import Home from './pages/home';
+import Create from './pages/create';
+import LoginSignup from './pages/login-signup';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+  // Redirect
+} from 'react-router-dom';
+
+export default function App() {
+  return (
+    <Router>
+      <NavBar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="create" element={<Create />} />
+          <Route path="login-signup" element={<LoginSignup />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
