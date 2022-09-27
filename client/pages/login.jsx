@@ -19,13 +19,15 @@ export default function Login({ setAuth }) {
     try {
       const body = { email, password };
 
-      const response = await fetch('http://localhost:3000/auth/login', {
+      const response = await fetch('/auth/login', {
         method: 'Post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       });
 
       const parseRes = await response.json();
+      localStorage.setItem('token', parseRes.token);
+      setAuth(true);
 
     } catch (err) {
       console.error(err.message);
@@ -67,7 +69,6 @@ export default function Login({ setAuth }) {
             <button className="btn">Login</button>
           </div>
         </form>
-        <button className="btn">Login</button>
       </section>
     </>
   );

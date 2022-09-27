@@ -28,7 +28,6 @@ export default function LoginSignup({ setAuth }) {
       });
 
       const parseRes = await response.json();
-
       localStorage.setItem('token', parseRes.token);
       setAuth(true);
 
@@ -39,7 +38,7 @@ export default function LoginSignup({ setAuth }) {
 
   return (
     <div className="row log-sign-container">
-      <Login />
+      <Login setAuth={setAuth}/>
       <div className="signnup-container">
         <section className="log-sign-head">
           <h2 className="log-sign-title">

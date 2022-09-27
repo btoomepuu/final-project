@@ -1,11 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default class Account extends React.Component {
-  render() {
-    return (
-      <div className='container'>
-        <h1>hello</h1>
-      </div>
-    );
+export default function Account({ setAuth }) {
+  const [name, setName] = useState('');
+
+  async function getName() {
+    try {
+      const response = await fetch('/account/', {
+        method: 'GET',
+        headers: { token: localStorage.token }
+      });
+
+      const parseRes = await response.json();
+      setName(parseRes.name);
+
+    } catch (err) {
+      console.error(err.message);
+    }
   }
+
+  const logout = e => {
+    e.preventDefault();
+    localStorage.removeItem('token');
+    setAuth(false);
+  };
+  useEffect(() => { getName(); }, []);
+
+  return (
+    <>
+      <h1>{name}</h1>
+      <button onClick={logout}>logout</button>
+    </>
+  );
 }
