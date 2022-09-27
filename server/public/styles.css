@@ -6,29 +6,39 @@
   font-family: "Barlow", sans-serif;
 } */
 
+/* {
+  font-family: "Abril Fatface", cursive;
+}
+
+.barlow {
+  font-family: "Barlow", sans-serif;
+} */
+
 * {
   margin: 0;
   padding: 0;
 }
 
-/* .container {
+.container {
   margin: 0 1.5vh;
   max-width: 575px;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .container {
-    max-width: 1080px;
+    max-width: 900px;
+    margin: auto;
   }
-} */
+}
 
 .row {
   display: flex;
-}
+} */
 
 /* navbar */
 
-.link {
+.link,
+.link:visited {
   text-decoration: none;
   color: #a92c46;
 }
@@ -54,12 +64,179 @@
 }
 
 /* /login-signup */
+.log-sign-container {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.signup-container,
+.signin-cotainer {
+  flex-grow: 1;
+}
+
+.signin-cotainer {
+  margin-top: 25%;
+}
+
+hr {
+  color: #63666a;
+  width: 70%;
+}
 
 .log-sign-head {
+  color: #63666a;
+  font-family: "Abril Fatface", cursive;
+  text-align: center;
+}
+
+.email {
+  margin-top: 25%;
+}
+
+.form-group {
+  color: rgb(131, 136, 143);
+  font-family: Barlow, sans-serif;
+  font-size: 1em;
+  text-align: center;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background-color: rgb(131, 136, 143, 50%);
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  margin-bottom: 10px;
+}
+
+.log-sign-title {
+  font-size: 1.25em;
+  margin-bottom: 0.8rem;
+}
+
+.log-sign-text {
+  color: #83888f;
+  font-size: 1em;
+  margin-bottom: 0.8rem;
+}
+
+/* order page */
+.order-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.selection {
+  flex-wrap: wrap;
+  color: #858a91;
+  flex-basis: 100%;
+}
+
+.selection > span {
+  width: 100%;
+  font-family:
+    "Abril Fatface",
+    cursive;
+  font-size: 2.5vw;
+}
+
+.box-1,
+.box-2,
+.box-3 {
+  color: #333d4b;
+  background-color: #f4f1eb;
+  padding: 0.5rem;
+  word-break: break-word;
+  border-radius: 2%;
+}
+
+.box-1,
+.box-2 {
+  margin-right: 0.5vh;
+}
+
+.question {
+  color: #858a91;
+  font-family:
+    "Abril Fatface",
+    cursive;
+  font-size: 2.5vh;
+}
+
+.hover:hover {
+  background-color: #fdd6ba;
+  cursor: pointer;
+}
+
+.option {
+  font-family:
+    "Abril Fatface",
+    cursive;
+  font-size: 2vw;
+}
+
+.info {
+  font-family:
+    Barlow,
+    sans-serif;
+  font-size: 1.5vw;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+/* .container {
+  margin: 0 1.5vh;
+  max-width: 575px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1080px;
+  }
+} */
+
+/* .row {
+  display: flex;
+} */
+
+/* navbar */
+
+/* .link {
+  text-decoration: none;
+  color: #a92c46;
+}
+
+.nav-bar {
+  cursor: pointer;
+  margin: 3vh 2vh;
+}
+
+.logo {
+  font-family: "Abril Fatface", cursive;
+  font-size: 1.5em;
+  width: 60%;
+}
+
+.login,
+.create {
+  align-self: center;
+  font-family: Barlow, sans-serif;
+  font-size: 0.8em;
+  text-align: center;
+  width: 20%;
+} */
+
+/* /login-signup */
+
+/* .log-sign-head {
   font-family: "Abril Fatface", cursive;
   color: #63666a;
 }
 
 .form-group {
   font-family: Barlow, sans-serif;
-}
+} */

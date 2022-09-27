@@ -5,7 +5,7 @@ const authorization = require('..//server/authorization');
 router.get('/', authorization, async (req, res) => {
   try {
 
-    const user = await pool.query('SELECT ("firstName", "lastName") FROM users WHERE "userId" = $1', [req.user]);
+    const user = await pool.query('SELECT (name) FROM users WHERE "userId" = $1', [req.user]);
 
     res.json(user.rows[0]);
 

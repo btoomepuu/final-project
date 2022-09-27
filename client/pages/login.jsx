@@ -1,68 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export default class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
-  }
+export default function Login({ setAuth }) {
 
-  onChange = e => {
-    const target = e.target;
-    const name = target.name;
-    const value = target.value;
+  const [inputs, setInputs] = useState({
+    email: '',
+    password: ''
+  });
 
-    this.setState({
-      [name]: value
-    });
+  const { email, password } = inputs;
+
+  const onChange = e => {
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
   };
 
-  onSubmit = e => {
+  const onSubmit = async e => {
     e.preventDefault();
+
+    try {
+      const body = { email, password };
+
+      const response = await fetch('http://localhost:3000/auth/login', {
+        method: 'Post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+
+      const parseRes = await response.json();
+
+    } catch (err) {
+      console.error(err.message);
+    }
   };
 
-  render() {
-    return (
-      <>
-        <section className="log-sign-head">
-          <h2>All ready registered?</h2>
-          <h4>Signin here:</h4>
-        </section>
+  return (
+    <>
+      <section className="log-sign-head">
+        <h2>All ready registered?</h2>
+        <h4>Signin here:</h4>
+      </section>
 
-        <section className="form">
-          <form>
-            <div className="form-group">
-              <p>Email</p>
-              <input
-                type="text"
+      <section className="form" onSubmit={onSubmit}>
+        <form >
+          <div className="form-group">
+            <p>Email</p>
+            <input
+                type="email"
                 className="form-control"
-                id="email"
                 name="email"
-                value={this.state.email}
-                onChange={this.onChange}
+                value={email}
+                onChange={onChange}
                 required
               />
-            </div>
-            <div className="form-group">
-              <p>Password</p>
-              <input
-                type="text"
+          </div>
+          <div className="form-group">
+            <p>Password</p>
+            <input
+                type="password"
                 className="form-control"
-                id="password"
                 name="password"
-                value={this.state.password}
-                onChange={this.onChange}
+                value={password}
+                onChange={onChange}
                 required
               />
-            </div>
-            <div className="form-group">
-              <button className="btn">Login</button>
-            </div>
-          </form>
-        </section>
-      </>
-    );
-  }
+          </div>
+          <div className="form-group">
+            <button className="btn">Login</button>
+          </div>
+        </form>
+        <button className="btn">Login</button>
+      </section>
+    </>
+  );
 }

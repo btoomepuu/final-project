@@ -7,7 +7,7 @@ const authorization = require('../server/authorization');
 
 router.post('/register', validInfo, async (req, res) => {
   try {
-    const { firstName, lastName, email, password } = req.body;
+    const { name, email, password } = req.body;
     const user = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
 
     if (user.rows.length !== 0) {
@@ -18,7 +18,7 @@ router.post('/register', validInfo, async (req, res) => {
     const salt = await bcrypt.genSalt(saltRound);
     const bcryptPassword = await bcrypt.hash(password, salt);
 
-    const newUser = await pool.query('INSERT INTO users ("firstName", "lastName", email, password) VALUES ($1, $2, $3, $4) RETURNING *', [firstName, lastName, email, bcryptPassword]);
+    const newUser = await pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *', [name, email, bcryptPassword]);
 
     const token = jwtGenerator(newUser.rows[0].userId);
     return res.json({ token });

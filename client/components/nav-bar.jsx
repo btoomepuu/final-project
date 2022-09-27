@@ -13,16 +13,15 @@ export default function NavBar() {
             <FontAwesomeIcon icon={faCoffeeBeans} /> coolbeans
           </Link>
         </div>
-        <Link to="create" className="link create">
+        <Link to="/create" className="link create">
           <span>Create Plan</span>
         </Link>
-        {/* <Link to='order'></Link> */}
-        <Link to="login-signup" className="link login">
+        <Link to="/login-signup" className="link login">
           <span>Login/Signup</span>
         </Link>
-        {/* <Link to="account" className="link">
-          <div clasName="account">Account</div>
-        </Link> */}
+        <Link to="/account" clasName="link login">
+          <span >Account</span>
+        </Link>
       </nav>
     </div>
   );
